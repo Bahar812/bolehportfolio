@@ -68,17 +68,24 @@ const About: React.FC = () => {
           
           <div className="w-full md:w-1/2" ref={textRef}>
             <div className="max-w-xl">
-              <p className="text-gray-300 leading-relaxed mb-6 text-lg">
-                I'm a 6th-semester Information Systems student at Universitas Ciputra with a GPA of 3.83. 
-                I'm passionate about programming and continuously seek to grow and learn new things. 
-                I love building impactful tech solutions.
-              </p>
-              
-              <p className="text-gray-300 leading-relaxed text-lg mb-8">
-                My journey in technology has led me to work on various projects, from entrepreneurship 
-                simulation apps to AI-driven safety solutions. I strive to create applications that not 
-                only solve problems but also provide meaningful experiences for users.
-              </p>
+             <p className="text-gray-300 leading-relaxed mb-6 text-lg">
+  I'm a 6th-semester Information Systems student at Universitas Ciputra. 
+  I'm passionate about programming and continuously seek to grow and learn new things. 
+  I love building impactful tech solutions.
+</p>
+
+<p className="text-gray-300 leading-relaxed text-lg mb-6">
+  My journey in technology has led me to work on various projects, from entrepreneurship 
+  simulation apps to AI-driven safety solutions. I strive to create applications that not 
+  only solve problems but also provide meaningful experiences for users.
+</p>
+
+<p className="text-gray-300 leading-relaxed text-lg mb-8">
+  In addition to my technical skills, I enjoy collaborating with diverse teams and believe that great software 
+  comes from a strong blend of creativity, empathy, and continuous feedback. My goal is to use technology 
+  to bring positive impact, empower communities, and help others access better digital experiences.
+</p>
+
             </div>
           </div>
         </div>
