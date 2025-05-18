@@ -1,8 +1,46 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const About: React.FC = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+  const textRef = useRef<HTMLDivElement>(null);
+  const imageRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    const text = textRef.current;
+    const image = imageRef.current;
+
+    if (section && text && image) {
+      gsap.from(text, {
+        opacity: 0,
+        x: -50,
+        duration: 1,
+        scrollTrigger: {
+          trigger: section,
+          start: 'top center',
+          toggleActions: 'play none none reverse'
+        }
+      });
+
+      gsap.from(image, {
+        opacity: 0,
+        x: 50,
+        duration: 1,
+        scrollTrigger: {
+          trigger: section,
+          start: 'top center',
+          toggleActions: 'play none none reverse'
+        }
+      });
+    }
+  }, []);
+
   return (
-    <section id="about" className="py-20 bg-gray-900 px-4">
+    <section id="about" className="py-20 bg-gray-900 px-4" ref={sectionRef}>
       <div className="container max-w-5xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
@@ -11,18 +49,30 @@ const About: React.FC = () => {
           <div className="w-20 h-1 bg-purple-500 mx-auto"></div>
         </div>
         
-        <div className="max-w-3xl mx-auto">
-          <p className="text-gray-300 leading-relaxed mb-6 text-lg">
-            I'm a 6th-semester Information Systems student at Universitas Ciputra with a GPA of 3.83. 
-            I'm passionate about programming and continuously seek to grow and learn new things. 
-            I love building impactful tech solutions.
-          </p>
+        <div className="flex flex-col md:flex-row gap-12 items-center">
+          <div className="w-full md:w-1/2" ref={imageRef}>
+            <img 
+              src="https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+              alt="Programming workspace"
+              className="rounded-lg shadow-xl w-full h-auto"
+            />
+          </div>
           
-          <p className="text-gray-300 leading-relaxed text-lg">
-            My journey in technology has led me to work on various projects, from entrepreneurship 
-            simulation apps to AI-driven safety solutions. I strive to create applications that not 
-            only solve problems but also provide meaningful experiences for users.
-          </p>
+          <div className="w-full md:w-1/2" ref={textRef}>
+            <div className="max-w-xl">
+              <p className="text-gray-300 leading-relaxed mb-6 text-lg">
+                I'm a 6th-semester Information Systems student at Universitas Ciputra with a GPA of 3.83. 
+                I'm passionate about programming and continuously seek to grow and learn new things. 
+                I love building impactful tech solutions.
+              </p>
+              
+              <p className="text-gray-300 leading-relaxed text-lg mb-8">
+                My journey in technology has led me to work on various projects, from entrepreneurship 
+                simulation apps to AI-driven safety solutions. I strive to create applications that not 
+                only solve problems but also provide meaningful experiences for users.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>

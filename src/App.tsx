@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
+import Skills from './components/Skills';
 import Portfolio from './components/Portfolio';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
@@ -11,7 +12,6 @@ function App() {
   useEffect(() => {
     document.title = "Bahar Al Hamid | FullStack Developer";
     
-    // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -37,6 +37,7 @@ function App() {
       <main>
         <Hero />
         <About />
+        <Skills />
         <Portfolio />
         <Contact />
       </main>
