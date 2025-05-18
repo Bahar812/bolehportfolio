@@ -60,7 +60,7 @@ const About: React.FC = () => {
         <div className="flex flex-col md:flex-row gap-12 items-center">
           <div className="w-full md:w-1/2" ref={imageRef}>
             <img 
-              src="https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+              src="https://bahar812.github.io/BaharPortfolio/src/png/baharabout.JPG" 
               alt="Programming workspace"
               className="rounded-lg shadow-xl w-full h-auto"
             />
