@@ -26,22 +26,28 @@ const Skills: React.FC = () => {
   ];
 
   useEffect(() => {
-    const section = sectionRef.current;
-    const skillsContainer = skillsRef.current;
+    const ctx = gsap.context(() => {
+      const skillElements = skillsRef.current?.children;
+      if (skillElements) {
+        gsap.set(skillElements, { opacity: 0, y: 30 });
+        
+        gsap.to(skillElements, {
+          opacity: 1,
+          y: 0,
+          duration: 0.5,
+          stagger: 0.1,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top center+=100",
+            end: "bottom center",
+            toggleActions: "play none none reverse"
+          }
+        });
+      }
+    });
 
-    if (section && skillsContainer) {
-      gsap.from(skillsContainer.children, {
-        opacity: 0,
-        y: 30,
-        duration: 0.5,
-        stagger: 0.1,
-        scrollTrigger: {
-          trigger: section,
-          start: 'top center+=100',
-          toggleActions: 'play none none reverse'
-        }
-      });
-    }
+    return () => ctx.revert();
   }, []);
 
   return (

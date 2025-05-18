@@ -10,33 +10,41 @@ const About: React.FC = () => {
   const imageRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const section = sectionRef.current;
-    const text = textRef.current;
-    const image = imageRef.current;
-
-    if (section && text && image) {
-      gsap.from(text, {
-        opacity: 0,
-        x: -50,
-        duration: 1,
-        scrollTrigger: {
-          trigger: section,
-          start: 'top center',
-          toggleActions: 'play none none reverse'
+    const ctx = gsap.context(() => {
+      gsap.fromTo(textRef.current,
+        { opacity: 0, x: -50 },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 1,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top center+=100",
+            end: "bottom center",
+            toggleActions: "play none none reverse"
+          }
         }
-      });
+      );
 
-      gsap.from(image, {
-        opacity: 0,
-        x: 50,
-        duration: 1,
-        scrollTrigger: {
-          trigger: section,
-          start: 'top center',
-          toggleActions: 'play none none reverse'
+      gsap.fromTo(imageRef.current,
+        { opacity: 0, x: 50 },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 1,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top center+=100",
+            end: "bottom center",
+            toggleActions: "play none none reverse"
+          }
         }
-      });
-    }
+      );
+    });
+
+    return () => ctx.revert();
   }, []);
 
   return (
