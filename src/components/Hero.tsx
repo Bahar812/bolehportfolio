@@ -1,9 +1,26 @@
-import React from 'react';
-import { Github as GitHub, Linkedin, Mail, Globe, FileText } from 'lucide-react';
+import React, { useRef } from 'react';
+import { Canvas } from '@react-three/fiber';
+import { OrbitControls, Stage } from '@react-three/drei';
+import { Github as GitHub, Linkedin, Mail, FileText } from 'lucide-react';
+import { ModelViewer } from './ModelViewer';
 
 const Hero: React.FC = () => {
+  const mousePosition = useRef({ x: 0.5, y: 0.5 });
+
+  const handleMouseMove = (e) => {
+    const { clientX, clientY } = e;
+    mousePosition.current = {
+      x: clientX / window.innerWidth,
+      y: clientY / window.innerHeight,
+    };
+  };
+
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center bg-gray-950 pt-20 px-4">
+    <section 
+      id="home" 
+      className="min-h-screen flex items-center justify-center bg-gray-950 pt-20 px-4"
+      onMouseMove={handleMouseMove}
+    >
       <div className="container max-w-5xl mx-auto">
         <div className="flex flex-col md:flex-row items-center justify-between gap-12">
           <div className="flex flex-col items-start text-left max-w-xl">
@@ -46,8 +63,6 @@ const Hero: React.FC = () => {
               >
                 <Mail size={20} />
               </a>
-             
-            
             </div>
             
             <div className="flex gap-4">
@@ -69,12 +84,13 @@ const Hero: React.FC = () => {
             </div>
           </div>
           
-          <div className="w-full md:w-1/2 max-w-md">
-            <img 
-              src="https://bahar812.github.io/BaharPortfolio/src/png/baharabout.JPG" 
-              alt="Bahar Al Hamid"
-              className="w-full h-auto rounded-2xl shadow-2xl"
-            />
+          <div className="w-full md:w-1/2 h-[400px]">
+            <Canvas shadows camera={{ position: [0, 0, 5], fov: 50 }}>
+              <Stage environment="city" intensity={0.5}>
+                <ModelViewer mousePosition={mousePosition} />
+              </Stage>
+              <OrbitControls enableZoom={false} />
+            </Canvas>
           </div>
         </div>
       </div>
