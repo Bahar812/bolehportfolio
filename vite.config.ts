@@ -9,5 +9,6 @@ export default defineConfig({
   },
   server: {
     publicDir: 'public'
-  }
+  },
+  assetsInclude: ['**/*.glb'] // Add GLB files to the asset include list
 });
