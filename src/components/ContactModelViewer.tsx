@@ -3,7 +3,7 @@ import { useGLTF } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
 
 export function ContactModelViewer() {
-  const { scene } = useGLTF('/Cowbot_Sheriff_0525055117_texture.glb');
+  const { scene } = useGLTF('https://raw.githubusercontent.com/Bahar812/bolehportfolio/main/src/data/Cowbot_Sheriff_0525055117_texture.glb');
   const modelRef = useRef();
 
   useFrame((state) => {
