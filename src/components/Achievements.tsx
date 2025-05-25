@@ -58,7 +58,7 @@ const Achievements: React.FC = () => {
 
   return (
     <section id="achievements" className="py-20 bg-gray-900 px-4" ref={sectionRef}>
-      <div className="container max-w-5xl mx-auto">
+      <div className="container max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             My <span className="text-purple-500">Achievements</span>
@@ -71,7 +71,7 @@ const Achievements: React.FC = () => {
         
         <div 
           ref={cardsRef}
-          className="grid grid-cols-1 md:grid-cols-2 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
           {certificates.map((cert, index) => (
             <div
