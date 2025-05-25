@@ -4,6 +4,7 @@ import Hero from './components/Hero';
 import About from './components/About';
 import Experience from './components/Experience';
 import Skills from './components/Skills';
+import Achievements from './components/Achievements';
 import Portfolio from './components/Portfolio';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
@@ -40,6 +41,7 @@ function App() {
         <About />
         <Experience />
         <Skills />
+        <Achievements />
         <Portfolio />
         <Contact />
       </main>
@@ -47,5 +49,3 @@ function App() {
     </div>
   );
 }
-
-export default App
