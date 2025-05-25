@@ -19,7 +19,7 @@ const Contact: React.FC = () => {
         </div>
         
         <div className="flex flex-col md:flex-row gap-8 items-center">
-          <div className="w-full md:w-1/2 h-[400px]">
+          <div className="w-full md:w-1/2 h-[700px]">
             <Canvas shadows camera={{ position: [0, 0, 5], fov: 50 }}>
               <Stage environment="city" intensity={0.5}>
                 <ContactModelViewer />
