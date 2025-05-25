@@ -10,25 +10,40 @@ const Achievements: React.FC = () => {
 
   const certificates = [
     {
-      image: "https://raw.githubusercontent.com/Bahar812/BaharPortfolio/main/src/png/sertif1.jpg",
-      name: "LO Kreatif 2022 UI/UX Design Contest",
-      issuer: "Universitas Brawijaya"
+      image: "https://github.com/Bahar812/bolehportfolio/blob/main/src/data/Photo%20Certificate%20Data%20Science%20101.png",
+      name: "Certificate Data Science 101",
+      issuer: "IBM"
     },
     {
-      image: "https://raw.githubusercontent.com/Bahar812/BaharPortfolio/main/src/png/sertif2.jpg",
-      name: "SI FEST UNJA 2023 UI/UX Design Contest",
-      issuer: "Universitas Jambi"
+      image: "https://github.com/Bahar812/bolehportfolio/blob/main/src/data/Photo%20Certificate%20Deep%20Learning%20with%20TensorFlow.png",
+      name: "Certificate Deep Learning with TensorFlow",
+      issuer: "IBM"
     },
     {
-      image: "https://raw.githubusercontent.com/Bahar812/BaharPortfolio/main/src/png/sertif3.jpg",
-      name: "Software Competition Amikom 2023",
-      issuer: "Universitas Amikom Yogyakarta"
+      image: "https://github.com/Bahar812/bolehportfolio/blob/main/src/data/Photo%20Certificate%20Machine%20Learning%20with%20Python.png",
+      name: "Certificate Machine Learning with Python",
+      issuer: "IBM"
     },
     {
-      image: "https://raw.githubusercontent.com/Bahar812/BaharPortfolio/main/src/png/sertif4.jpg",
-      name: "Hackfest Google 2023",
-      issuer: "Google Developer Student Clubs Indonesia"
-    }
+      image: "https://github.com/Bahar812/bolehportfolio/blob/main/src/data/Photo%20Certificate%20Python%20101%20for%20Data%20Science.png",
+      name: "Certificate Python 101 for Data Science",
+      issuer: "IBM"
+    },
+    {
+      image: "https://github.com/Bahar812/bolehportfolio/blob/main/src/data/Photo%20Certificate%20SQL%20and%20Relational%20Databases%20101.png",
+      name: "Certificate SQL and Relational Databases 101",
+      issuer: "IBM"
+    }, 
+    {
+      image: "https://github.com/Bahar812/bolehportfolio/blob/main/src/data/Photo%20Certificate%20of%20Completion%20Intro%20to%20Programming.png",
+      name: "Certificate of Completion Intro to Programming",
+      issuer: "Kaggle"
+    },
+    {
+      image: "https://github.com/Bahar812/bolehportfolio/blob/main/src/data/Photo%20Certificate%20of%20Completion%20Python.png",
+      name: "Certificate of Completion Python",
+      issuer: "Kaggle"
+    },
   ];
 
   useEffect(() => {
