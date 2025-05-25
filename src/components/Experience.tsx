@@ -128,7 +128,7 @@ const Experience: React.FC = () => {
               </div>
 
               {/* Timeline Point */}
-              <div className="absolute left-1/2 transform -translate-x-1/2">
+              <div className="absolute left-1/2 transform -translate-x-1/2 hidden md:block">
                 <div className="w-4 h-4 bg-purple-500 rounded-full"></div>
                 <div className="hidden md:block absolute top-1/2 w-8 h-0.5 bg-purple-500/30" style={{
                   left: index % 2 === 0 ? 'auto' : '100%',

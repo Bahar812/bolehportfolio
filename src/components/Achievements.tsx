@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { FiCheckCircle } from 'react-icons/fi';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -10,39 +11,46 @@ const Achievements: React.FC = () => {
 
   const certificates = [
     {
-      image: "https://github.com/Bahar812/bolehportfolio/blob/main/src/data/Photo%20Certificate%20Data%20Science%20101.png",
+      image: "https://raw.githubusercontent.com/Bahar812/bolehportfolio/main/src/data/Photo%20Certificate%20Data%20Science%20101.png",
       name: "Certificate Data Science 101",
-      issuer: "IBM"
+      issuer: "IBM",
+      link: "https://courses.cognitiveclass.ai/certificates/9ac73c08cd3c4f44b7697e30ff7c540d"
     },
     {
-      image: "https://github.com/Bahar812/bolehportfolio/blob/main/src/data/Photo%20Certificate%20Deep%20Learning%20with%20TensorFlow.png",
+      image: "https://raw.githubusercontent.com/Bahar812/bolehportfolio/main/src/data/Photo%20Certificate%20Deep%20Learning%20with%20TensorFlow.png",
       name: "Certificate Deep Learning with TensorFlow",
-      issuer: "IBM"
+      issuer: "IBM",
+      link: "https://courses.cognitiveclass.ai/certificates/0a711be5638845dda3da473ea52e698a"
     },
     {
-      image: "https://github.com/Bahar812/bolehportfolio/blob/main/src/data/Photo%20Certificate%20Machine%20Learning%20with%20Python.png",
+      image: "https://raw.githubusercontent.com/Bahar812/bolehportfolio/main/src/data/Photo%20Certificate%20Machine%20Learning%20with%20Python.png",
       name: "Certificate Machine Learning with Python",
-      issuer: "IBM"
+      issuer: "IBM",
+      link: "https://courses.cognitiveclass.ai/certificates/de318394018945ffb43307a8c168790b"
     },
     {
-      image: "https://github.com/Bahar812/bolehportfolio/blob/main/src/data/Photo%20Certificate%20Python%20101%20for%20Data%20Science.png",
+      image: "https://raw.githubusercontent.com/Bahar812/bolehportfolio/main/src/data/Photo%20Certificate%20Python%20101%20for%20Data%20Science.png",
       name: "Certificate Python 101 for Data Science",
-      issuer: "IBM"
+      issuer: "IBM",
+      link: "https://courses.cognitiveclass.ai/certificates/58daeae6ba044c9180687f9f3af9ea7f"
     },
     {
-      image: "https://github.com/Bahar812/bolehportfolio/blob/main/src/data/Photo%20Certificate%20SQL%20and%20Relational%20Databases%20101.png",
+      image: "https://raw.githubusercontent.com/Bahar812/bolehportfolio/main/src/data/Photo%20Certificate%20SQL%20and%20Relational%20Databases%20101.png",
       name: "Certificate SQL and Relational Databases 101",
-      issuer: "IBM"
+      issuer: "IBM",
+      link: "https://courses.cognitiveclass.ai/certificates/82e935f96c0b491ab569e0587fc8f63b"
     }, 
     {
-      image: "https://github.com/Bahar812/bolehportfolio/blob/main/src/data/Photo%20Certificate%20of%20Completion%20Intro%20to%20Programming.png",
+      image: "https://raw.githubusercontent.com/Bahar812/bolehportfolio/main/src/data/Photo%20Certificate%20of%20Completion%20Intro%20to%20Programming.png",
       name: "Certificate of Completion Intro to Programming",
-      issuer: "Kaggle"
+      issuer: "Kaggle",
+      link: "https://www.kaggle.com/learn/certification/baharalhamid/intro-to-programming"
     },
     {
-      image: "https://github.com/Bahar812/bolehportfolio/blob/main/src/data/Photo%20Certificate%20of%20Completion%20Python.png",
+      image: "https://raw.githubusercontent.com/Bahar812/bolehportfolio/main/src/data/Photo%20Certificate%20of%20Completion%20Python.png",
       name: "Certificate of Completion Python",
-      issuer: "Kaggle"
+      issuer: "Kaggle",
+      link: "https://www.kaggle.com/learn/certification/baharalhamid/python"
     },
   ];
 
@@ -104,9 +112,20 @@ const Achievements: React.FC = () => {
                 <h3 className="text-xl font-bold text-white mb-2">
                   {cert.name}
                 </h3>
-                <p className="text-gray-400">
+                <p className="text-gray-400 mb-8">
                   Issued by: {cert.issuer}
                 </p>
+               {cert.link && (
+    <a
+      href={cert.link}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="absolute bottom-4 right-6 inline-flex items-center text-blue-400 hover:text-blue-200 transition"
+    >
+      <FiCheckCircle className="mr-2" />
+      View Certificate
+    </a>
+  )}
               </div>
             </div>
           ))}
