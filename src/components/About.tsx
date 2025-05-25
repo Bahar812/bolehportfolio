@@ -60,8 +60,8 @@ const About: React.FC = () => {
         <div className="flex flex-col md:flex-row gap-12 items-center">
           <div className="w-full md:w-1/2" ref={imageRef}>
             <img 
-              src="https://bahar812.github.io/BaharPortfolio/src/png/baharabout.JPG" 
-              alt="Programming workspace"
+              src="https://raw.githubusercontent.com/Bahar812/bolehportfolio/main/src/data/BAHAR_PROFILE.jpg" 
+              alt="Bahar Al Hamid"
               className="rounded-lg shadow-xl w-full h-auto"
             />
           </div>
