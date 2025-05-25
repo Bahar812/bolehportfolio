@@ -75,12 +75,12 @@ const Experience: React.FC = () => {
     const ctx = gsap.context(() => {
       const timelineItems = timelineRef.current?.children;
       if (timelineItems) {
-        gsap.set(timelineItems, { opacity: 0, y: 30 });
+        gsap.set(timelineItems, { opacity: 0, x: (index) => index % 2 === 0 ? -50 : 50 });
         
         gsap.to(timelineItems, {
           opacity: 1,
-          y: 0,
-          duration: 0.5,
+          x: 0,
+          duration: 0.8,
           stagger: 0.2,
           ease: "power2.out",
           scrollTrigger: {
@@ -98,7 +98,7 @@ const Experience: React.FC = () => {
 
   return (
     <section id="experience" className="py-20 bg-gray-900 px-4" ref={sectionRef}>
-      <div className="container max-w-5xl mx-auto">
+      <div className="container max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Work <span className="text-purple-500">Experience</span>
@@ -108,28 +108,48 @@ const Experience: React.FC = () => {
 
         <div className="relative" ref={timelineRef}>
           {/* Vertical Line */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-purple-500/30"></div>
+          <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-purple-500/30"></div>
 
           {experiences.map((exp, index) => (
             <div
               key={index}
-              className={`relative flex items-center mb-8 ${
-                index % 2 === 0 ? 'justify-end md:flex-row-reverse' : 'justify-start'
+              className={`flex items-center justify-center md:justify-between mb-8 ${
+                index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
               }`}
             >
-              {/* Timeline Point */}
-              <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-purple-500 rounded-full"></div>
+              {/* Left Content */}
+              <div className={`hidden md:block w-[calc(50%-3rem)] ${index % 2 === 0 ? '' : 'order-2'}`}>
+                {index % 2 === 0 && (
+                  <div className="bg-gray-800 p-6 rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-purple-500/20">
+                    <h3 className="text-xl font-bold text-white mb-2">{exp.title}</h3>
+                    <div className="flex flex-col mb-2">
+                      <span className="text-purple-400 font-medium">{exp.role}</span>
+                      <span className="text-gray-400 text-sm">{exp.date}</span>
+                    </div>
+                    <p className="text-gray-300">{exp.description}</p>
+                  </div>
+                )}
+              </div>
 
-              {/* Content Box */}
-              <div className={`w-full md:w-[calc(50%-2rem)] p-6 bg-gray-800 rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-purple-500/20 ${
-                index % 2 === 0 ? 'md:mr-8' : 'md:ml-8'
-              }`}>
-                <h3 className="text-xl font-bold text-white mb-2">{exp.title}</h3>
-                <div className="flex flex-col mb-2">
-                  <span className="text-purple-400 font-medium">{exp.role}</span>
-                  <span className="text-gray-400 text-sm">{exp.date}</span>
+              {/* Timeline Point */}
+              <div className="relative flex-shrink-0">
+                <div className="w-4 h-4 bg-purple-500 rounded-full"></div>
+                <div className="hidden md:block absolute top-1/2 w-8 h-0.5 bg-purple-500/30" style={{
+                  left: index % 2 === 0 ? '100%' : 'auto',
+                  right: index % 2 === 0 ? 'auto' : '100%'
+                }}></div>
+              </div>
+
+              {/* Right Content */}
+              <div className={`w-full md:w-[calc(50%-3rem)] ${index % 2 === 0 ? 'md:hidden' : 'order-1'}`}>
+                <div className="bg-gray-800 p-6 rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-purple-500/20">
+                  <h3 className="text-xl font-bold text-white mb-2">{exp.title}</h3>
+                  <div className="flex flex-col mb-2">
+                    <span className="text-purple-400 font-medium">{exp.role}</span>
+                    <span className="text-gray-400 text-sm">{exp.date}</span>
+                  </div>
+                  <p className="text-gray-300">{exp.description}</p>
                 </div>
-                <p className="text-gray-300">{exp.description}</p>
               </div>
             </div>
           ))}
