@@ -113,35 +113,10 @@ const Experience: React.FC = () => {
           {experiences.map((exp, index) => (
             <div
               key={index}
-              className={`flex items-center justify-center md:justify-between mb-8 ${
-                index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-              }`}
+              className="flex items-center justify-center md:justify-between mb-8"
             >
-              {/* Left Content */}
-              <div className={`hidden md:block w-[calc(50%-3rem)] ${index % 2 === 0 ? '' : 'order-2'}`}>
-                {index % 2 === 0 && (
-                  <div className="bg-gray-800 p-6 rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-purple-500/20">
-                    <h3 className="text-xl font-bold text-white mb-2">{exp.title}</h3>
-                    <div className="flex flex-col mb-2">
-                      <span className="text-purple-400 font-medium">{exp.role}</span>
-                      <span className="text-gray-400 text-sm">{exp.date}</span>
-                    </div>
-                    <p className="text-gray-300">{exp.description}</p>
-                  </div>
-                )}
-              </div>
-
-              {/* Timeline Point */}
-              <div className="relative flex-shrink-0">
-                <div className="w-4 h-4 bg-purple-500 rounded-full"></div>
-                <div className="hidden md:block absolute top-1/2 w-8 h-0.5 bg-purple-500/30" style={{
-                  left: index % 2 === 0 ? '100%' : 'auto',
-                  right: index % 2 === 0 ? 'auto' : '100%'
-                }}></div>
-              </div>
-
-              {/* Right Content */}
-              <div className={`w-full md:w-[calc(50%-3rem)] ${index % 2 === 0 ? 'md:hidden' : 'order-1'}`}>
+              {/* Content */}
+              <div className={`w-full md:w-[calc(50%-3rem)] ${index % 2 === 0 ? 'md:text-right' : 'md:ml-auto'}`}>
                 <div className="bg-gray-800 p-6 rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-purple-500/20">
                   <h3 className="text-xl font-bold text-white mb-2">{exp.title}</h3>
                   <div className="flex flex-col mb-2">
@@ -150,6 +125,16 @@ const Experience: React.FC = () => {
                   </div>
                   <p className="text-gray-300">{exp.description}</p>
                 </div>
+              </div>
+
+              {/* Timeline Point */}
+              <div className="absolute left-1/2 transform -translate-x-1/2">
+                <div className="w-4 h-4 bg-purple-500 rounded-full"></div>
+                <div className="hidden md:block absolute top-1/2 w-8 h-0.5 bg-purple-500/30" style={{
+                  left: index % 2 === 0 ? 'auto' : '100%',
+                  right: index % 2 === 0 ? '100%' : 'auto',
+                  transform: 'translateY(-50%)'
+                }}></div>
               </div>
             </div>
           ))}
