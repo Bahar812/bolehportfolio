@@ -12,5 +12,5 @@ export function ContactModelViewer() {
     }
   });
 
-  return <primitive ref={modelRef} object={scene} scale={2} position={[0, -1, 0]} />;
+  return <primitive ref={modelRef} object={scene} scale={4} position={[0, -1.5, 0]} />;
 }
