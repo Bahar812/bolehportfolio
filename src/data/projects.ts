@@ -56,5 +56,21 @@ export const projects: Project[] = [
     image: "https://bahar812.github.io/BaharPortfolio/src/png/identpix.png",
     github: "https://github.com/Bahar812/Identpix",
     category: "app"
+  },
+  {
+    id: 8,
+    title: "Catering Ayu",
+    description: "Premium catering featuring authentic Middle Eastern cuisine.",
+    image: "https://raw.githubusercontent.com/Bahar812/bolehportfolio/main/src/data/Mockup%20Catering%20Ayu.png",
+    github: "https://github.com/Bahar812/cateringayu",
+    category: "web"
+  },
+  {
+    id: 9,
+    title: "Andre Komputer",
+    description: "Trusted tech solutions since 2010 — hardware and software.",
+    image: "https://raw.githubusercontent.com/Bahar812/bolehportfolio/main/src/data/Mockup%20Andre%20Komputer.png",
+    github: "https://github.com/Bahar812/andrekomputer",
+    category: "web"
   }
 ];
