@@ -68,17 +68,7 @@ const Contact: React.FC = () => {
                     <span>github.com/Bahar812</span>
                   </a>
                   
-                  <a 
-                    href="https://bahar812.github.io/BaharPortfolio/" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="flex items-center text-gray-300 hover:text-purple-400 transition-colors group"
-                  >
-                    <div className="rounded-full bg-gray-700 p-3 mr-4 group-hover:bg-purple-500/20 transition-colors">
-                      <Globe className="text-purple-400" size={20} />
-                    </div>
-                    <span>bahar812.github.io/BaharPortfolio</span>
-                  </a>
+                 
                 </div>
 
                 <div className="pt-6">
